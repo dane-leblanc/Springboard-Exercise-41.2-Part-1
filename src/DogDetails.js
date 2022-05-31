@@ -1,12 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import "./DogDetails.css";
 
 function DogDetails({ dogs }) {
   const { name } = useParams();
   const dog = dogs.filter((dog) => dog.name.toLowerCase() === name)[0];
 
-  const dogFacts = dog.facts.map((fact) => <p>{fact}</p>);
+  if (!dog) return <Navigate to="/dogs" replace />;
+
+  const dogFacts = dog.facts.map((fact, i) => <p key={i}>{fact}</p>);
 
   return (
     <div className="DogDetails">

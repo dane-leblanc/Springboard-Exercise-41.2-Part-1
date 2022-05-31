@@ -3,7 +3,7 @@ import "./DogList.css";
 
 function DogList({ dogs }) {
   const dogCards = dogs.map((dog) => (
-    <div>
+    <div key={dog.name}>
       <a href={`/dogs/${dog.name.toLowerCase()}`}>
         <img src={dog.src} alt={dog.name} width="200" />
       </a>
