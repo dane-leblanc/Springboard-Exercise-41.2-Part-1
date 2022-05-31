@@ -16,6 +16,9 @@ function DogDetails({ dogs }) {
         <div className="DogDetails-text">
           <p>Age: {dog.age}</p>
           <div className="DogDetails-facts">{dogFacts}</div>
+          <p>
+            <a href="/dogs">Back Home</a>
+          </p>
         </div>
       </div>
     </div>
